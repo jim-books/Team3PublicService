@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEED Poster — Variant B (HTML/CSS)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8eaed;
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    .poster {
+      width: 800px;
+      height: 2000px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f8fa 100%);
+      color: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      padding: 56px 48px 100px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, #1B3A6B, #2D6A4F);
+    }
+
+    .accent-bar {
+      width: 64px;
+      height: 4px;
+      background: #2D6A4F;
+      margin: 16px auto 0;
+    }
+
+    /* Header */
+    .header { text-align: center; margin-bottom: 40px; }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+
+    .logo-row img { height: 100px; }
+
+    .headline {
+      font-size: 72px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #1a1a2e;
+      line-height: 1;
+    }
+
+    .subhead {
+      font-size: 18px;
+      color: #5a6270;
+      margin-top: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #7a8494;
+      margin-top: 8px;
+    }
+
+    .hook {
+      margin-top: 28px;
+      font-size: 26px;
+      font-weight: 700;
+      color: #1B3A6B;
+      line-height: 1.35;
+      padding: 0 12px;
+    }
+
+    /* Sections */
+    section { margin-bottom: 36px; }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #2D6A4F;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1B3A6B;
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+
+    ul.bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.bullets li {
+      font-size: 20px;
+      line-height: 1.45;
+      color: #2d3340;
+      padding: 6px 0 6px 28px;
+      position: relative;
+    }
+
+    ul.bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+      background: #2D6A4F;
+      border-radius: 50%;
+    }
+
+    .users {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip {
+      background: #e8f0eb;
+      color: #1B3A6B;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #c5d9cc;
+    }
+
+    /* Feature cards */
+    .features { display: flex; flex-direction: column; gap: 16px; }
+
+    .feature-card {
+      background: #fff;
+      border: 2px solid #d8e2f0;
+      border-left: 6px solid #1B3A6B;
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .feature-card:nth-child(2) { border-left-color: #2D6A4F; }
+    .feature-card:nth-child(3) { border-left-color: #C9A227; }
+
+    .feature-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1B3A6B;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 18px;
+      color: #4a5568;
+      line-height: 1.4;
+    }
+
+    .ai-line {
+      background: #1B3A6B;
+      color: #fff;
+      padding: 22px 24px;
+      border-radius: 12px;
+      font-size: 19px;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .ai-line em { color: #a8d5b5; font-style: normal; font-weight: 600; }
+
+    /* Flow */
+    .flow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .flow-step {
+      background: #f0f4f8;
+      border: 2px solid #1B3A6B;
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #1B3A6B;
+      text-align: center;
+      flex: 1;
+    }
+
+    .flow-arrow {
+      font-size: 24px;
+      color: #2D6A4F;
+      font-weight: 700;
+    }
+
+    /* Demo placeholder */
+    .demo-box {
+      background: linear-gradient(135deg, #1B3A6B 0%, #2D4A7A 100%);
+      border-radius: 16px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .demo-box .demo-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .demo-box .demo-sub { font-size: 16px; opacity: 0.85; }
+
+    /* Impact */
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .impact-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #e2e8f0;
+      font-size: 17px;
+      font-weight: 600;
+      color: #1B3A6B;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* CTA */
+    .cta-block {
+      margin-top: auto;
+      text-align: center;
+      padding-top: 24px;
+    }
+
+    .qr-placeholder {
+      width: 160px;
+      height: 160px;
+      background: #fff;
+      border: 3px solid #1B3A6B;
+      border-radius: 12px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: #5a6270;
+      font-weight: 600;
+    }
+
+    .cta-label {
+      font-size: 28px;
+      font-weight: 800;
+      color: #1B3A6B;
+      margin-bottom: 8px;
+    }
+
+    .cta-url {
+      font-size: 13px;
+      color: #7a8494;
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+
+    .footer {
+      font-size: 16px;
+      color: #5a6270;
+      line-height: 1.6;
+    }
+
+    .footer strong { color: #1B3A6B; }
+
+    .sdg-tags {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #2D6A4F;
+      font-weight: 600;
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .poster { box-shadow: none; width: 80cm; height: 200cm; }
+    }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <header class="header">
+      <div class="logo-row">
+        <img src="../../assets/seed-logo.png" alt="SEED logo">
+      </div>
+      <div class="headline">SEED</div>
+      <div class="subhead">School Education Evaluation and Development</div>
+      <div class="tagline">Planting the future of education.</div>
+      <div class="accent-bar"></div>
+      <p class="hook">Where does school support go — and where is it needed most?</p>
+    </header>
+
+    <section>
+      <div class="section-label">The Problem</div>
+      <ul class="bullets">
+        <li>Resources follow broad formulas, not real school conditions</li>
+        <li>Reporting is fragmented and slow for schools and governments</li>
+        <li>Decision-makers lack timely, actionable evidence</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="section-label">Who It Serves</div>
+      <div class="users">
+        <span class="chip">Governments & NGOs</span>
+        <span class="chip">Schools</span>
+        <span class="chip">Researchers</span>
+        <span class="chip">Partners</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">How SEED Works</div>
+      <div class="features">
+        <div class="feature-card">
+          <h3>1. Decision Dashboard</h3>
+          <p>Natural-language queries for allocation priorities</p>
+        </div>
+        <div class="feature-card">
+          <h3>2. AI Reporting Toolkits</h3>
+          <p>School profiles, classroom observations, funding briefs</p>
+        </div>
+        <div class="feature-card">
+          <h3>3. Research Dataset API</h3>
+          <p>Equity analytics for policy and intervention research</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Data Flow</div>
+      <div class="flow">
+        <div class="flow-step">Collect</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">Diagnose</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">Allocate</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="ai-line">
+        AI reduces reporting friction and turns complex school data into <em>decisions people can act on</em> — not decorative chatbots.
+      </div>
+    </section>
+
+    <section>
+      <div class="demo-box">
+        <div class="demo-title">Live Demo Screenshot</div>
+        <div class="demo-sub">Replace with Enter.pro capture</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-label">Why It Matters</div>
+      <div class="impact-grid">
+        <div class="impact-item">Fairer funding for high-need schools</div>
+        <div class="impact-item">Less admin burden on educators</div>
+        <div class="impact-item">Evidence-based public-service decisions</div>
+        <div class="impact-item">Education equity infrastructure</div>
+      </div>
+    </section>
+
+    <div class="cta-block">
+      <div class="qr-placeholder">QR CODE<br>→ paste here</div>
+      <div class="cta-label">Try the Live Demo</div>
+      <div class="cta-url">37f7ba50441f48ff808dfbcadd92d0be.prod.enterapp.pro</div>
+      <div class="footer">
+        <strong>Team 3</strong> · AI Collision Lab · Jimmy · Sim · Ken · Janis<br>
+        Hackathon prototype · AI for Public Services
+      </div>
+      <div class="sdg-tags">SDG 4 Quality Education · SDG 16 Strong Institutions · #ATOX #Tsinghua #TGYD</div>
+    </div>
+  </article>
+</body>
+</html>

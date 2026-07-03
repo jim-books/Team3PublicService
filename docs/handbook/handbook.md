@@ -110,6 +110,85 @@ For this Mini Hackathon, Vibe Coding can help teams quickly create:
 
 The focus is not on producing the most complex code. The focus is on creating something that clearly addresses a real problem and can be meaningfully experienced.
 
+## **How to Make Cursor Build a Premium Website**
+
+When teams ask AI to “build a website,” the output often looks generic. Use the workflow below to get stronger quality consistently.
+
+### **1) Force a Premium Stack in the First Prompt**
+
+Start your first Cursor prompt with explicit technical constraints:
+
+- Framework: **Vite + React** (or Next.js if your team truly needs SSR/routing)
+- Styling: **Tailwind CSS**
+- Components/icons: **shadcn-style UI patterns** + **Lucide React**
+
+This gives AI a structured design language and avoids random HTML/CSS templates.
+
+### **2) Feed Visual References, Not Just Text**
+
+- Paste screenshots of high-quality pages (Product Hunt, Dribbble, etc.) directly into chat.
+- Ask Cursor to replicate the **spacing, hierarchy, typography tone, and interaction feel**, then adapt it for your project topic.
+- If useful, paste specific Tailwind snippets/components and ask Cursor to tailor them for your content.
+
+### **3) Set Design Constraints Early**
+
+In your prompt, define fixed rules before generation:
+
+- Exact color palette (hex codes)
+- Font system (e.g., Inter/Geist or another clean sans-serif)
+- Aesthetic direction (e.g., dark minimal, bento-grid, editorial civic-tech)
+- Interaction quality (subtle hover states, smooth transitions, accessible focus styles)
+- Avoid rule: “Do not produce a generic SaaS template look.”
+
+### **4) Build in Micro-Milestones**
+
+Do not ask for the whole website in one step. Use short iterations:
+
+1. Navbar + hero first
+1. Validate look and spacing
+1. Add next section (features, evidence, pricing, etc.)
+1. Refine each block before moving on
+
+This prevents AI from collapsing into lower-quality defaults.
+
+### **5) Final Polish Checklist Prompt**
+
+Run a final quality pass with explicit prompts such as:
+
+- “Add smooth hover micro-interactions (`duration-300 transition-all`) to buttons/cards.”
+- “Use consistent responsive spacing (`px-6 md:px-12 py-20`) across major sections.”
+- “Re-check contrast and type scale so the page reads like a premium product.”
+- “If a live prototype exists, embed it with fallback external link support.”
+
+### **Prompt Template You Can Reuse**
+
+```text
+Build a modern landing page for [PROJECT].
+
+Tech stack:
+- Vite + React + Tailwind CSS
+- Lucide React icons
+- shadcn-style component quality
+
+Design constraints:
+- Palette: [HEX values]
+- Typography: [font choices]
+- Style: [aesthetic direction]
+- Avoid generic template look
+- Include strong hover/focus states and responsive spacing
+
+Build order:
+1) Navbar + hero
+2) Feature/value section
+3) Demo section (embed if possible, always add external fallback link)
+4) Final CTA/footer
+
+Quality requirements:
+- Accessibility-minded contrast
+- Mobile-first spacing
+- Clear hierarchy and concise copy
+```
+
 ## What You Can Build？
 
 Check here：https://portfolio.attrax.ai/

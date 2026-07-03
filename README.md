@@ -25,6 +25,16 @@ Our chosen track is **AI for Public Services** — using AI to make public infor
 
 ![AI for Public Services vision](docs/ai-for-public-services.png)
 
+## Our Project: SEED
+
+![SEED logo](docs/assets/seed-logo.png)
+
+**SEED** stands for **School Education Evaluation and Development**.
+
+It is our hackathon concept for making education-resource decisions more accessible and effective through data. SEED combines school reporting, diagnostic analysis, and natural-language decision support so governments, NGOs, administrators, and researchers can better understand where support is needed and how resources should be allocated.
+
+For the fuller project story, see [`StoryofSeed.md`](StoryofSeed.md).
+
 Team photos from the build day (for pitch, poster, and social):
 
 **[docs/assets/team-session/](docs/assets/team-session/)** — 8 behind-the-scenes shots with a [usage guide](docs/assets/team-session/README.md)
@@ -94,27 +104,43 @@ The strongest projects start from a **concrete user need**, use AI **meaningfull
 
 ## Project Direction
 
-> **Status:** Ideation in progress — see [FigJam](https://www.figma.com/board/GA8K6Sc4JSk0qS4sq37kKQ/Public-Service?node-id=0-1&p=f&t=T9HnPqjfQ9nJj71p-0)
+> **Status:** Story and prototype direction defined — supporting materials in [`StoryofSeed.md`](StoryofSeed.md) and [FigJam](https://www.figma.com/board/GA8K6Sc4JSk0qS4sq37kKQ/Public-Service?node-id=0-1&p=f&t=T9HnPqjfQ9nJj71p-0)
 
-Before building, we should be able to answer:
+### Project Snapshot
 
-1. What specific problem are we addressing?
-2. Who experiences this problem most directly?
-3. Why is the current solution insufficient?
-4. What role does AI play that is genuinely useful?
-5. What can a user do with our prototype by the end of the day?
+| | |
+|---|---|
+| **Project name** | **SEED** |
+| **Full name** | School Education Evaluation and Development |
+| **Tagline** | *Planting the future of education.* |
+| **Demo** | [Try the SEED platform](https://37f7ba50441f48ff808dfbcadd92d0be.prod.enterapp.pro/) |
+| **Concept note** | [StoryofSeed.md](StoryofSeed.md) |
 
 ### Problem Statement
 
-_TBD — What specific user need are we solving? Who is affected, and what pain point do they face today?_
+Education systems often allocate resources through broad, traditional processes that do not fully reflect the real conditions of individual schools. This creates a gap between where support is sent and where need is greatest. At the same time, school and government teams spend significant time collecting data through fragmented reporting workflows, while decision-makers and NGOs still struggle to turn that data into timely, evidence-based action.
 
 ### Proposed Solution
 
-_TBD — What will we build during the hackathon? How does AI add value beyond a simple lookup tool?_
+We are building **SEED**, an open platform for data-driven education evaluation and development. SEED brings together three connected capabilities:
+
+1. A **decision dashboard with natural-language querying** for governments and NGOs to explore school conditions and prioritize resource allocation.
+2. **AI-assisted reporting tools** for schools and administrators to collect, structure, and summarize school-quality data more efficiently, including concepts such as an AI classroom quality inspector.
+3. A **research-facing dataset API and advanced analytics layer** for researchers and policy analysts studying education equity and better public-service interventions.
+
+AI adds value by making complex, fragmented education data easier to collect, easier to interpret, and easier to act on.
 
 ### Target Users
 
-_TBD_
+- Government agencies and local education authorities
+- NGOs, foundations, and education-sector partners
+- School administrators and reporting teams
+- Researchers and policy analysts working on education equity
+- Sponsors and collaborators interested in evidence-based public-service innovation
+
+### Why This Direction
+
+SEED is inspired by the data-driven school-index approach summarized in [`docs/school-index-brief.md`](docs/school-index-brief.md). Our goal is to show how better data infrastructure can support fairer, more accountable, and more effective public-service delivery in education.
 
 ---
 
@@ -154,13 +180,31 @@ Each participant receives **USD 30 in Enter.pro credits** for the event.
 
 ---
 
-## Team
+## Team Portfolio
 
-| Name | Role |
-|------|------|
-| _TBD_ | _TBD_ |
+### Jimmy HUNG
 
-Suggested roles: Project Lead · Product / UX · AI Builder · Researcher · Community / Impact Lead · Storyteller / Pitch Lead
+- Ex-Software Engineer
+- HKUST Year 4, Innovation, Design & Technology
+- Fostered 5+ award-winning interdisciplinary teams using a research-backed framework
+
+### Sim Jie
+
+- Marketing
+- University of Hertfordshire
+- _(TBC)_
+
+### Ken
+
+- Thai Government Officer
+- PhD in Education
+- _(TBC)_
+
+### Janis
+
+- Experience in Business Development
+- Trading, Business
+- _(TBC)_
 
 Team roster: [7.3 Team Information Sheet](https://kcnz9o3vxzly.feishu.cn/sheets/MHDTsFhsVhqcGNtO6w3cfNPBnFg)
 
@@ -168,15 +212,69 @@ Team roster: [7.3 Team Information Sheet](https://kcnz9o3vxzly.feishu.cn/sheets/
 
 ## Tech Stack
 
-_TBD — update after tool bootcamp_
+- Vite + React + TypeScript
+- Tailwind CSS
+- Lucide React icons
+- Static docs and showcase assets under `docs/`
+- Legacy mirrored Enter.pro export under `demo/`
 
 ---
 
 ## Getting Started
 
+Run the React showcase locally:
+
 ```bash
-# Coming soon — add setup instructions once the prototype repo is scaffolded
+npm install
+npm run dev
 ```
+
+Open the local Vite URL shown in terminal (usually `http://127.0.0.1:5173/`).
+
+Create a production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+Legacy option: the live Enter.pro demo is still mirrored under `demo/` and can be served with:
+
+```bash
+python3 demo/serve.py
+```
+
+See [`demo/README.md`](demo/README.md) for mirror details.
+
+### Deploy the landing page (public link)
+
+**Automatic (GitHub Pages)** — push to `main` after enabling Pages:
+
+1. GitHub repo → **Settings** → **Pages**
+2. **Build and deployment** → Source: **GitHub Actions**
+3. Push to `main` — workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml) publishes the site
+
+Public URL:
+
+**https://jim-books.github.io/Team3PublicService/**
+
+**Manual (Vercel — custom domain friendly)**
+
+```bash
+npm run deploy:vercel
+```
+
+First run opens browser login. Vercel settings: build `npm run build`, output `dist`.
+
+**Manual (Netlify)**
+
+```bash
+npm run deploy:netlify
+```
+
+Config is in [`netlify.toml`](netlify.toml). [`vercel.json`](vercel.json) is included for Vercel.
+
+Production assets live under `public/` (logo, photos, concept image) and are copied into `dist/` on build.
 
 ---
 
@@ -184,6 +282,7 @@ _TBD — update after tool bootcamp_
 
 | Resource | URL |
 |----------|-----|
+| Story of SEED | [StoryofSeed.md](StoryofSeed.md) |
 | School index concept brief (local) | [docs/school-index-brief.md](docs/school-index-brief.md) |
 | Participant handbook (local) | [docs/handbook/handbook.md](docs/handbook/handbook.md) |
 | Participant handbook (Feishu) | [Feishu doc](https://kcnz9o3vxzly.feishu.cn/docx/JhQkddTISouxgaxgM3GcIPsanHG) |
@@ -191,6 +290,7 @@ _TBD — update after tool bootcamp_
 | Event registration (Luma) | [luma.com/3ivc03mk](https://luma.com/3ivc03mk) |
 | Project submission form | [Feishu form](https://kcnz9o3vxzly.feishu.cn/share/base/form/shrcn8tdtIPX37jqgKGiqpaDezd) |
 | Project gallery | [portfolio.attrax.ai/shanghai](https://portfolio.attrax.ai/shanghai) |
+| SEED live demo | [Enter app](https://37f7ba50441f48ff808dfbcadd92d0be.prod.enterapp.pro/) |
 | Enter.pro (event credits) | [enter.converge.ai](https://enter.converge.ai?link_id=323&utm_campaign=attrax&utm_medium=community&utm_source=event&utm_term=july&gift=0LCFVWGDMD&inviter=Libby) |
 | Team information sheet | [Feishu sheet](https://kcnz9o3vxzly.feishu.cn/sheets/MHDTsFhsVhqcGNtO6w3cfNPBnFg) |
 | UN SDGs | [sdgs.un.org/goals](https://sdgs.un.org/goals) |

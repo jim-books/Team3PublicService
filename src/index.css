@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-cream font-sans text-ink antialiased;
+    background:
+      radial-gradient(circle at top left, rgba(154, 75, 75, 0.08), transparent 28%),
+      radial-gradient(circle at top right, rgba(46, 97, 66, 0.12), transparent 30%),
+      linear-gradient(180deg, #fbfaf7 0%, #f6f3ec 38%, #f8f7f2 100%);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

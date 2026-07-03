@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEED Showcase Legacy Entry</title>
+  <meta name="description" content="Legacy entry for the SEED showcase. The primary implementation now lives in the React + Tailwind app at repository root.">
+  <style>
+    :root {
+      --ink: #162331;
+      --paper: #fffdfc;
+      --mist: #d8e0da;
+      --forest: #2e6142;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fbfaf7 0%, #f6f3ec 40%, #f8f7f2 100%);
+      padding: 24px;
+    }
+    .panel {
+      width: min(760px, 100%);
+      border-radius: 24px;
+      border: 1px solid var(--mist);
+      background: var(--paper);
+      box-shadow: 0 16px 34px rgba(22, 35, 49, 0.08);
+      padding: 28px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(2rem, 4.6vw, 3rem);
+      line-height: 1.08;
+    }
+    p {
+      margin: 16px 0 0;
+      line-height: 1.8;
+      color: rgba(22, 35, 49, 0.84);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: all 180ms ease;
+    }
+    .primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .secondary {
+      border: 1px solid rgba(22, 35, 49, 0.2);
+      color: var(--ink);
+    }
+    a:hover { transform: translateY(-1px); }
+    .hint {
+      margin-top: 14px;
+      font-size: 0.92rem;
+      color: rgba(22, 35, 49, 0.68);
+    }
+    code {
+      background: rgba(22, 35, 49, 0.08);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <section class="panel">
+    <h1>SEED showcase moved to React</h1>
+    <p>
+      The primary showcase is now implemented as a Vite + React + Tailwind app at repository root,
+      including the embedded live demo section and updated visual system.
+    </p>
+    <div class="actions">
+      <a class="primary" href="../../index.html">Open React showcase entry</a>
+      <a class="secondary" href="https://37f7ba50441f48ff808dfbcadd92d0be.prod.enterapp.pro" target="_blank" rel="noopener noreferrer">Open live SEED demo</a>
+    </div>
+    <p class="hint">
+      Local dev command: <code>npm run dev</code>
+    </p>
+  </section>
+</body>
+</html>

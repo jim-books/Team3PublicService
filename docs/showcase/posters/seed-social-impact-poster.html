@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEED Social Impact Poster</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Libre+Baskerville:ital@1&display=swap");
+
+    :root {
+      --navy: #1a3a5c;
+      --green: #2d6a3e;
+      --red: #8b2942;
+      --cream: #f8f6f2;
+      --ink: #202329;
+      --muted: #5a636e;
+      --line: #d7ddd5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #dfe4e8;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .poster {
+      width: 800px;
+      height: 2000px;
+      background: radial-gradient(circle at 80% 15%, #ffffff 0%, var(--cream) 52%);
+      border: 1px solid #c8d0c7;
+      box-shadow: 0 12px 42px rgba(0, 0, 0, 0.15);
+      padding: 46px 48px 44px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 9px;
+      background: linear-gradient(90deg, var(--green), var(--navy), var(--red));
+    }
+
+    .header {
+      text-align: center;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    .header img {
+      width: 84px;
+      height: auto;
+      margin-bottom: 8px;
+    }
+
+    .title {
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      font-size: 68px;
+      line-height: 1;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-weight: 600;
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    .tagline {
+      font-family: "Libre Baskerville", Georgia, serif;
+      color: var(--green);
+      margin-top: 8px;
+      font-size: 24px;
+    }
+
+    .problem {
+      background: #ffffffcc;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--red);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .section-label {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 9px;
+    }
+
+    .problem p {
+      font-size: 31px;
+      line-height: 1.2;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .main {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      gap: 22px;
+    }
+
+    .visual {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .flow-line {
+      margin-top: 14px;
+      text-align: center;
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .solution-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .card p {
+      color: #35404b;
+      line-height: 1.45;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      border: 1px solid #bfcfbd;
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: var(--navy);
+      background: #eff5ef;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .global-note {
+      margin-top: 12px;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      display: grid;
+      grid-template-columns: 1fr 185px;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .team h3 {
+      font-size: 16px;
+      color: var(--navy);
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .team ul {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      color: #2f3944;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .team strong {
+      color: var(--navy);
+    }
+
+    .meta {
+      margin-top: 12px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .qr {
+      border: 2px dashed var(--navy);
+      border-radius: 10px;
+      width: 185px;
+      height: 185px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      background: #fff;
+    }
+
+    .demo {
+      margin-top: 8px;
+      text-align: center;
+      color: var(--green);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .poster {
+        width: 80cm;
+        height: 200cm;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="poster">
+    <header class="header">
+      <img src="../../assets/seed-logo.png" alt="SEED logo">
+      <h1 class="title">SEED</h1>
+      <p class="subtitle">School Education Evaluation and Development</p>
+      <p class="tagline">Planting the future of education.</p>
+    </header>
+
+    <section class="problem">
+      <div class="section-label">The Problem</div>
+      <p>Education funding often misses the schools that need help most because data is fragmented and hard to act on.</p>
+    </section>
+
+    <main class="main">
+      <section class="visual">
+        <div class="section-label">Data to Equity</div>
+        <svg viewBox="0 0 700 560" width="100%" height="560" role="img" aria-label="Seed, Thailand shape, and data flow to schools in Thailand and worldwide">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stop-color="#1a3a5c"/>
+              <stop offset="100%" stop-color="#2d6a3e"/>
+            </linearGradient>
+          </defs>
+
+          <path d="M330 315 C295 291, 278 255, 288 222 C299 185, 333 165, 364 173 C401 183, 421 220, 412 257 C405 290, 370 329, 330 315 Z"
+            fill="#1a3a5c" stroke="#8b2942" stroke-width="6"/>
+          <path d="M346 177 C348 148, 363 126, 386 119 C381 148, 369 170, 346 177 Z" fill="#2d6a3e"/>
+          <path d="M339 177 C330 151, 309 131, 287 127 C298 150, 313 170, 339 177 Z" fill="#2d6a3e"/>
+
+          <path d="M352 248 C450 205, 531 170, 620 163" stroke="url(#g1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M344 255 C430 282, 515 318, 617 338" stroke="url(#g1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M336 262 C251 295, 182 334, 84 387" stroke="url(#g1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M334 247 C254 214, 183 173, 85 127" stroke="url(#g1)" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+          <circle cx="620" cy="163" r="7" fill="#2d6a3e"/>
+          <circle cx="617" cy="338" r="7" fill="#2d6a3e"/>
+          <circle cx="84" cy="387" r="7" fill="#2d6a3e"/>
+          <circle cx="85" cy="127" r="7" fill="#2d6a3e"/>
+
+          <rect x="553" y="100" width="113" height="78" rx="8" fill="#f8f6f2" stroke="#1a3a5c" stroke-width="3"/>
+          <polygon points="608,71 543,100 673,100" fill="#1a3a5c"/>
+          <rect x="594" y="135" width="28" height="43" fill="#8b2942"/>
+
+          <rect x="556" y="277" width="112" height="76" rx="8" fill="#f8f6f2" stroke="#1a3a5c" stroke-width="3"/>
+          <polygon points="612,247 547,277 677,277" fill="#1a3a5c"/>
+          <rect x="597" y="310" width="27" height="43" fill="#8b2942"/>
+
+          <rect x="25" y="347" width="120" height="82" rx="8" fill="#f8f6f2" stroke="#1a3a5c" stroke-width="3"/>
+          <polygon points="85,314 16,347 154,347" fill="#1a3a5c"/>
+          <rect x="72" y="381" width="28" height="48" fill="#8b2942"/>
+          <path d="M18 370 C15 355, 15 340, 24 326" stroke="#2d6a3e" stroke-width="4" fill="none"/>
+          <path d="M31 371 C29 350, 33 333, 47 315" stroke="#2d6a3e" stroke-width="4" fill="none"/>
+
+          <rect x="25" y="87" width="120" height="80" rx="8" fill="#f8f6f2" stroke="#1a3a5c" stroke-width="3"/>
+          <polygon points="85,57 16,87 154,87" fill="#1a3a5c"/>
+          <rect x="72" y="121" width="28" height="46" fill="#8b2942"/>
+          <circle cx="120" cy="58" r="11" fill="#2d6a3e"/>
+          <circle cx="138" cy="43" r="9" fill="#2d6a3e"/>
+
+          <text x="350" y="356" font-size="18" text-anchor="middle" fill="#2d6a3e" font-weight="700">Thailand case study + adaptable worldwide</text>
+        </svg>
+        <p class="flow-line">School reporting &rarr; Diagnosis &rarr; Fairer resource allocation</p>
+      </section>
+
+      <div class="solution-row">
+        <section class="card">
+          <h3>Our Solution</h3>
+          <p>SEED helps governments, NGOs, and schools turn fragmented education data into practical decisions.</p>
+          <p class="global-note">Starting in Thailand. Built for global adaptation.</p>
+        </section>
+
+        <section class="card">
+          <h3>Target Users</h3>
+          <div class="chips">
+            <span class="chip">Governments</span>
+            <span class="chip">NGOs</span>
+            <span class="chip">School Admins</span>
+            <span class="chip">Researchers</span>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <section class="team">
+        <h3>Team 3</h3>
+        <ul>
+          <li><strong>Jimmy HUNG</strong> — Engineering</li>
+          <li><strong>Sim Jie</strong> — Marketing</li>
+          <li><strong>Ken</strong> — Education Policy</li>
+          <li><strong>Janis</strong> — Business Development</li>
+        </ul>
+        <p class="meta">AI for Public Services · AI Collision Lab · TGYD × ATOX</p>
+      </section>
+      <section>
+        <div class="qr">QR CODE<br>PLACEHOLDER</div>
+        <p class="demo">Scan to try the live demo</p>
+      </section>
+    </footer>
+  </article>
+</body>
+</html>
