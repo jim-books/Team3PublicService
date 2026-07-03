@@ -25,6 +25,10 @@ Our chosen track is **AI for Public Services** — using AI to make public infor
 
 ![AI for Public Services vision](docs/ai-for-public-services.png)
 
+Team photos from the build day (for pitch, poster, and social):
+
+**[docs/assets/team-session/](docs/assets/team-session/)** — 8 behind-the-scenes shots with a [usage guide](docs/assets/team-session/README.md)
+
 Our ideation and planning live on our shared FigJam board:
 
 **[Public Service — FigJam Board](https://www.figma.com/board/GA8K6Sc4JSk0qS4sq37kKQ/Public-Service?node-id=0-1&p=f&t=T9HnPqjfQ9nJj71p-0)**
