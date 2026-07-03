@@ -184,6 +184,7 @@ _TBD — update after tool bootcamp_
 
 | Resource | URL |
 |----------|-----|
+| School index concept brief (local) | [docs/school-index-brief.md](docs/school-index-brief.md) |
 | Participant handbook (local) | [docs/handbook/handbook.md](docs/handbook/handbook.md) |
 | Participant handbook (Feishu) | [Feishu doc](https://kcnz9o3vxzly.feishu.cn/docx/JhQkddTISouxgaxgM3GcIPsanHG) |
 | FigJam — Public Service board | [Figma board](https://www.figma.com/board/GA8K6Sc4JSk0qS4sq37kKQ/Public-Service?node-id=0-1&p=f&t=T9HnPqjfQ9nJj71p-0) |
